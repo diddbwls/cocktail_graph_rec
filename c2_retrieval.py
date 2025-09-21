@@ -3,7 +3,7 @@ from config import get_config, get_c2_config
 from base_retrieval import BaseRetrieval
 
 class C2Retrieval(BaseRetrieval):
-    """C2 태스크: Glass Type + 계층적 재료 매칭 기반 칵테일 추천 검색"""
+    """C2 태스크: Glass Type + 재료 매칭 기반 칵테일 추천 검색"""
     
     def __init__(self, use_python_config: bool = True):
         """Initialize C2 retrieval system"""

@@ -1,12 +1,12 @@
 """
-C2 키워드 추출 프롬프트 - Glass Type + 계층적 재료 매칭 기반 검색
+C2 키워드 추출 프롬프트 - Glass Type + 재료 매칭 기반 검색
 """
 
 from langchain.prompts import PromptTemplate
 
 C2_KEYWORD_EXTRACTION_PROMPT = """
 
-C2 알고리즘은 Glass Type 우선순위와 계층적 재료 매칭을 통해 칵테일을 검색합니다.
+C2 알고리즘은 Glass Type 우선순위와 재료 매칭을 통해 칵테일을 검색합니다.
 다음 주의사항, 키워드 분류 기준, 예시를 참고하여 키워드를 분류해주세요. 
 
 ## 주의사항:

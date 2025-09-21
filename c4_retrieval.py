@@ -3,7 +3,7 @@ from config import get_config, get_c4_config
 from base_retrieval import BaseRetrieval
 
 class C4Retrieval(BaseRetrieval):
-    """C4 태스크: 관계 기반 + 레시피 복잡도 기반 칵테일 대안 추천"""
+    """C4 태스크: 칵테일 유사도 및 대안 추천"""
     
     def __init__(self, use_python_config: bool = True):
         """Initialize C4 retrieval system"""
