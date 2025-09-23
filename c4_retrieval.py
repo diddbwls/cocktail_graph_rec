@@ -31,8 +31,6 @@ class C4Retrieval(BaseRetrieval):
             result['target_cocktail'] = ""
         if 'ingredients' not in result:
             result['ingredients'] = []
-        if 'complexity_preference' not in result:
-            result['complexity_preference'] = "similar"
                 
         return result
     
