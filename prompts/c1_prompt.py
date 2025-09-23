@@ -1,11 +1,9 @@
-"""
-C1 키워드 추출 프롬프트 - Visual Similarity 기반 검색
-"""
+# C1 태스크: 시각 및 재료 기반 검색
 
 from langchain.prompts import PromptTemplate
-
+#C1 키워드 추출 프롬프트 - Visual Similarity 기반 검색
 C1_KEYWORD_EXTRACTION_PROMPT = """
-
+C1 알고리즘은 시각 및 재료 기반 검색을 수행합니다.
 다음 주의사항, 재료 분류 기준, 예시를 참고하여 키워드를 분류해주세요. 
 
 ## 주의사항:

@@ -1,6 +1,4 @@
 # C3 태스크: Multi-hop 재료 확장 검색
-
-
 from langchain.prompts import PromptTemplate
 
 # C3 키워드 추출 프롬프트 (Multi-hop 재료 확장용)
@@ -27,6 +25,7 @@ C3 알고리즘은 Multi-hop 재료 확장 검색을 수행합니다:
 ## 예시 질문3: "mint와 lime을 사용하는 Mojito 같은 상쾌한 칵테일들"
 → {{"ingredients": ["mint", "lime"], "cocktail_names": ["Mojito"]}}
 
+--------------------------------
 사용자 질문: {user_question}
 
 참고 카테고리: {category_list}

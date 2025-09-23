@@ -10,7 +10,7 @@ from langchain.prompts import PromptTemplate
 
 # C4 키워드 추출 프롬프트
 C4_KEYWORD_EXTRACTION_PROMPT = """
-C4 알고리즘은 관계 기반 + 레시피 복잡도 필터링으로 칵테일 대안을 검색합니다:
+C4 알고리즘은 관계 기반 + 레시피 복잡도 기반 칵테일 대안을 검색합니다:
 - 타겟 칵테일과 공유 재료가 많은 칵테일들 우선 선정
 - 레시피 복잡도(재료 개수)가 비슷한 칵테일들로 필터링
 - 그래프 관계(HAS_INGREDIENT)를 통한 유사도 계산
@@ -35,6 +35,7 @@ C4 알고리즘은 관계 기반 + 레시피 복잡도 필터링으로 칵테일
 ## 예시 질문4: "Old Fashioned와 비슷하지만 다른 재료를 사용하는 칵테일"
 → {{"target_cocktail": "Old Fashioned", "ingredients": []}}
 
+--------------------------------
 사용자 질문: {user_question}
 
 참고 카테고리: {category_list}
