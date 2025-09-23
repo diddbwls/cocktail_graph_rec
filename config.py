@@ -25,7 +25,7 @@ C1_CONFIG = {
     "system_message": C1_SYSTEM_MESSAGE
 }
 
-# C2 태스크 설정 (Glass Type + 계층적 재료 매칭)
+# C2 태스크 설정 (Glass Type + 재료 매칭)
 C2_CONFIG = {
     "initial_top_k": INITIAL_TOP_K,                # 초기 name_embedding 유사도 검색 결과 수
     "final_top_k": FINAL_TOP_K,                  # 최종 결과 수
@@ -47,7 +47,7 @@ C3_CONFIG = {
     "system_message": C3_SYSTEM_MESSAGE
 }
 
-# C4 태스크 설정 (관계 기반 + 레시피 복잡도)
+# C4 태스크 설정 (재료기반 유사 레시피 칵테일 추천)
 C4_CONFIG = {
     "initial_top_k": INITIAL_TOP_K,                  # 관계 기반 검색 결과 수 (여유분)
     "final_top_k": FINAL_TOP_K,                    # 최종 결과 수

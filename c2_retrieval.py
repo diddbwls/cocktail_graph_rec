@@ -622,11 +622,11 @@ class C2Retrieval(BaseRetrieval):
         return scored_cocktails
     
     def progressive_ingredient_search(self, glass_cocktails: List[str], include_ingredients: List[str]) -> Dict[int, List[str]]:
-        """계층적 재료 매칭: 모든 재료 → 1개씩 뒤에서 제거하며 후보 확보"""
+        """재료 매칭: 모든 재료 → 1개씩 뒤에서 제거하며 후보 확보"""
         if not include_ingredients:
             return {0: glass_cocktails[:self.c2_config['target_candidates']]}
         
-        print(f"   → 계층적 재료 매칭 시작: {include_ingredients}")
+        print(f"   → 재료 매칭 시작: {include_ingredients}")
         
         # 재료 키워드들을 실제 재료명으로 매칭
         matched_ingredients = []
@@ -685,7 +685,7 @@ class C2Retrieval(BaseRetrieval):
                 print(f"   → Level 0에서 충분한 후보({len(new_cocktails)}개) 확보, 추가 레벨 생략")
                 break
         
-        print(f"   → 계층적 검색 완료: 총 {len(total_candidates)}개 후보 확보")
+        print(f"   → 검색 완료: 총 {len(total_candidates)}개 후보 확보")
         print(f"      레벨별 분포: {[(level, len(cocktails)) for level, cocktails in candidates_by_level.items()]}")
         
         return candidates_by_level
@@ -742,8 +742,8 @@ class C2Retrieval(BaseRetrieval):
         return final_ordered_cocktails
     
     def retrieve(self, user_question: str) -> List[Dict[str, Any]]:
-        """Glass Type + 계층적 재료 매칭 기반 칵테일 검색 알고리즘"""
-        print(f"C2 Retrieval (Glass Type + 계층적 재료 매칭): 사용자 질문 - {user_question}")
+        """Glass Type + 재료 매칭 기반 칵테일 검색 알고리즘"""
+        print(f"C2 Retrieval (Glass Type + 재료 매칭): 사용자 질문 - {user_question}")
         
         # 1단계: 키워드 추출
         keywords = self.extract_cocktail_keywords(user_question)
@@ -775,9 +775,9 @@ class C2Retrieval(BaseRetrieval):
             print("❌ 해당 글라스 타입의 칵테일을 찾을 수 없습니다.")
             return []
         
-        # 4단계: 계층적 재료 매칭으로 후보 수집
+        # 4단계: 재료 매칭으로 후보 수집
         if include_ingredients:
-            print(f"4단계 - 계층적 재료 매칭")
+            print(f"4단계 - 재료 매칭")
             candidates_by_level = self.progressive_ingredient_search(glass_cocktails, include_ingredients)
         else:
             print(f"4단계 - 재료 없음, 이름 기반 검색")
