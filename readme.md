@@ -35,7 +35,7 @@ ORDER BY score DESC
 
 ---
 
-## 🍷 C2: Glass Type + 계층적 재료 매칭
+## 🍷 C2: Glass Type + 재료 매칭
 
 ### 📊 유사도 비교 방법
 - **Glass Type**: 임베딩 유사도로 최적 글라스 선택
@@ -55,7 +55,7 @@ RETURN c.name as name
 - 해당 글라스 타입 칵테일들만 필터링 (100개 정도)
 
 ### 🔄 Hop 수 및 확장 과정
-**계층적 매칭 (Multi-level):**
+**재료 개수 레벨별 매칭 (Multi-level):**
 ```
 Level 0: [mint, lime] → 모든 재료를 가진 칵테일
 Level 1: [mint] → 1개 재료 제거하고 확장
@@ -126,7 +126,7 @@ MATCH (c2:Cocktail)-[:HAS_INGREDIENT]->(i2)
 
 ---
 
-## 🎯 C4: 칵테일 유사도 및 레시피 대안 추천
+## 🎯 C4: 재료기반 유사 레시피 칵테일 추천
 
 ### 📊 유사도 비교 방법
 - **Target Finding**: 이름 임베딩 유사도 또는 재료 매치율
@@ -193,7 +193,7 @@ AND shared_relationships >= $min_shared
 | 알고리즘 | 초기 검색 | Hop 수 | 핵심 유사도 | 최종 선정 |
 |---------|----------|--------|------------|----------|
 | **C1** | imageDescription 벡터 검색 | 2-hop | 시각적 유사도 | imageDescription 랭킹 |
-| **C2** | Glass Type 필터링 | Multi-level | 계층적 재료 매칭 | 레벨별 우선순위 |
+| **C2** | Glass Type 필터링 | Multi-level | 재료 매칭 | 레벨별 우선순위 |
 | **C3** | 이름/재료 직접 매치 | 3-hop | 재료 네트워크 확장 | imageDescription 랭킹 |
 | **C4** | 타겟 칵테일 중심 | 1-hop | 공유 재료 개수 | 관계 강도 + 복잡도 |
 

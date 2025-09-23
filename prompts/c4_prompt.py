@@ -1,4 +1,4 @@
-# C4 태스크: 칵테일 유사도 및 대안 추천 (Cocktail Similarity & Alternatives)
+# C4 태스크: 재료기반 유사 레시피 칵테일 추천
 # c4 예시 질문들:
 # 1. "Manhattan과 유사한 칵테일 추천해줘"
 # 2. "Mojito 같은 스타일의 다른 칵테일들"

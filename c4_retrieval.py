@@ -3,7 +3,7 @@ from config import get_config, get_c4_config
 from base_retrieval import BaseRetrieval
 
 class C4Retrieval(BaseRetrieval):
-    """C4 태스크: 칵테일 유사도 및 대안 추천"""
+    """C4 태스크: 재료기반 유사 레시피 칵테일 추천"""
     
     def __init__(self, use_python_config: bool = True):
         """Initialize C4 retrieval system"""
@@ -100,7 +100,7 @@ class C4Retrieval(BaseRetrieval):
         return ""
     
     def relationship_based_search(self, target_cocktail: str) -> List[Dict[str, Any]]:
-        """그래프 관계 기반 유사 칵테일 검색 - 동일 재료로 향하는 관계 수로 계산"""
+        """동일 재료로 향하는 관계 수로 계산"""
         if not target_cocktail:
             return []
         
